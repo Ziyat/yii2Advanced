@@ -2,7 +2,7 @@
 /** @var  array $params */
 return [
     'class' => 'yii\web\UrlManager',
-    'hostInfo' => $params['backendHostInfo'],
+    'hostInfo' => $params['frontendHostInfo'],
     'enablePrettyUrl' => true,
     'showScriptName' => false,
     'rules' => [

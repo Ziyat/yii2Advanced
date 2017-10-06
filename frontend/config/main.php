@@ -17,7 +17,7 @@ return [
             'cookieValidationKey' => $params['cookieValidationKey'],
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'common\entities\User',
             'enableAutoLogin' => true,
             'identityCookie' => [
                 'name' => '_identity',
@@ -44,8 +44,8 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'frontendUrlManager' => require __DIR__ . '/../../frontend/config/urlManager.php',
-        'backendUrlManager' => require __DIR__ . '/../../frontend/config/urlManager.php',
+        'frontendUrlManager' => require __DIR__ . '/urlManager.php',
+        'backendUrlManager' => require __DIR__ . '/../../backend/config/urlManager.php',
         'urlManager' => function () {
             return Yii::$app->get('frontendUrlManager');
         },
