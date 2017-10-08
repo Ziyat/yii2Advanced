@@ -1,5 +1,5 @@
 <?php
-namespace common\tests\unit\entities;
+namespace common\tests\unit\entities\User;
 
 use Codeception\Test\Unit;
 use common\entities\User;
@@ -8,7 +8,7 @@ class SignupTest extends Unit
 {
     public function testSuccess()
     {
-        $user = new User(
+        $user = User::signup(
             $username = 'username',
             $email = 'email@email.com',
             $password = 'password'
@@ -20,6 +20,6 @@ class SignupTest extends Unit
         $this->assertNotEquals($password, $user->password_hash);
         $this->assertNotEmpty($user->created_at);
         $this->assertNotEmpty($user->auth_key);
-        $this->assertEquals(User::STATUS_ACTIVE, $user->status);
+        $this->assertEquals($user->isActive());
     }
 }
